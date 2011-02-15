@@ -1,16 +1,24 @@
 <?php
 
 if ( function_exists('register_sidebars') ) {
-    register_sidebar(array(
-        'name'          => 'sidebar',
-        'id'            => 'sidebar',
-        'before_widget' => '<li id="%1$s" class="widget %2$s">',
-        'after_widget' => '</li>',
-        'before_title' => '<h4 class="widgettitle">',
-        'after_title' => '</h4>',
-    ));
   register_sidebar(array(
-      'name'          => 'footer',
+      'name'          => 'Venstre',
+      'id'            => 'left',
+      'before_widget' => '<li id="%1$s" class="widget %2$s">',
+      'after_widget' => '</li>',
+      'before_title' => '<h4 class="widgettitle">',
+      'after_title' => '</h4>',
+  ));
+  register_sidebar(array(
+      'name'          => 'H&oslash;jre',
+      'id'            => 'right',
+      'before_widget' => '<li id="%1$s" class="widget %2$s">',
+      'after_widget' => '</li>',
+      'before_title' => '<h4 class="widgettitle">',
+      'after_title' => '</h4>',
+  ));
+  register_sidebar(array(
+      'name'          => 'Footer',
       'id'            => 'footer',
       'before_widget' => '<li id="%1$s" class="widget %2$s">',
       'after_widget' => '</li>',
@@ -39,4 +47,7 @@ function borgerlyst_comments($comment, $args, $depth) {
         <div class="reply">
         	<?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
         </div>
-<?php } ?>
+<?php
+}
+
+//EOF

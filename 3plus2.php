@@ -3,12 +3,10 @@
 ?><div class="col1"><?php
 
 $borgerlyst = array();
-while (have_posts()) {
+while (have_posts() && sizeof($borgerlyst)<3) {
   the_post();
   include('box.php');
   $borgerlyst[] = $post->ID;
-  if (sizeof($borgerlyst)==3)
-    break;
 }
 
 ?></div><div class="col2"><?php
